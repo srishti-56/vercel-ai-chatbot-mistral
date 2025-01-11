@@ -25,7 +25,7 @@ export async function generateTitleFromUserMessage({
   message: CoreUserMessage;
 }) {
   const { text: title } = await generateText({
-    model: customModel('ministral-3b-latest'),
+    model: mistral('ministral-3b-latest'),
     system: `\n
     - you will generate a short title based on the first message a user begins a conversation with
     - ensure it is not more than 80 characters long
