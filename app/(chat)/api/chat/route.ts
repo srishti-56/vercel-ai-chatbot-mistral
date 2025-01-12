@@ -30,7 +30,6 @@ import {
   getMostRecentUserMessage,
   sanitizeResponseMessages,
 } from '@/lib/utils';
-import { mistral } from '@ai-sdk/mistral';
 
 import { generateTitleFromUserMessage } from '../../actions';
 
@@ -68,7 +67,7 @@ export async function POST(request: Request) {
 
   // const model = mistral('ministral-3b-latest');
   // modelId = 'ministral-3b-latest';
-  const model = models.find((model) => model.id === 'ministral-3b-latest');
+  const model = models.find((model) => model.id === modelId);
 
   if (!model) {
     return new Response('Model not found', { status: 404 });
